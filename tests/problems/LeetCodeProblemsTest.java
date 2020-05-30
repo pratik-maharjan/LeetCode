@@ -8,30 +8,30 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 class LeetCodeProblemsTest {
-    private LeetCodeProblems tester = new LeetCodeProblems();
+    private final LeetCodeProblems tester = new LeetCodeProblems();
 
     @Test
-    void isAnagram() throws Exception{
+    void isAnagram() {
         assertTrue(tester.isAnagram("pratik", "kiartp"));
         assertFalse(tester.isAnagram("aacc", "ccac"));
     }
 
     @Test
-    void firstUniqChar() throws Exception{
+    void firstUniqChar() {
         assertEquals(0, tester.firstUniqChar("leetcode"));
         assertEquals(2, tester.firstUniqChar("loveleetcode"));
         assertEquals(6, tester.firstUniqChar("prete boy pratik"));
     }
 
     @Test
-    void firstUniqCharUsingMaps() throws Exception{
+    void firstUniqCharUsingMaps() {
         assertEquals(0, tester.firstUniqCharUsingMaps("leetcode"));
         assertEquals(2, tester.firstUniqCharUsingMaps("loveleetcode"));
         assertEquals(6, tester.firstUniqCharUsingMaps("prete boy pratik"));
     }
 
     @Test
-    void checkStraightLine() throws Exception{
+    void checkStraightLine() {
         int[][] input1 = {{1,1},{2,2},{3,4},{4,5},{5,6},{7,7}};
         assertFalse(tester.checkStraightLine(input1));
         int[][] input2 = {{1,2},{2,3},{3,4},{4,5},{5,6},{6,7}};
@@ -41,7 +41,7 @@ class LeetCodeProblemsTest {
     }
 
     @Test
-    void frequencySort() throws Exception{
+    void frequencySort() {
         assertEquals("eert", tester.frequencySort("tree"));
         assertEquals("aaaccc", tester.frequencySort("cccaaa")) ;
         assertEquals("bbAa", tester.frequencySort("Aabb"));
@@ -49,14 +49,14 @@ class LeetCodeProblemsTest {
     }
 
     @Test
-    void singleNumber() throws Exception {
+    void singleNumber() {
         assertEquals(1, tester.singleNumber(new int[]{2, 2, 1}));
         assertEquals(4, tester.singleNumber(new int[]{4, 1, 2, 1, 2}));
         assertEquals(5, tester.singleNumber(new int[]{2, 2, 1, 3, 3, 4, 1, 5, 4}));
     }
 
     @Test
-    void isHappy() throws Exception {
+    void isHappy() {
         assertTrue(tester.isHappy(19));
         assertFalse(tester.isHappy(2));
         assertTrue(tester.isHappy(7));
@@ -66,7 +66,7 @@ class LeetCodeProblemsTest {
     }
 
     @Test
-    void countBits() throws Exception{
+    void countBits() {
         assertArrayEquals(new int[]{0, 1, 1}, tester.countBits(2));
         assertArrayEquals(new int[]{0, 1, 1, 2, 1, 2}, tester.countBits(5));
         assertArrayEquals(new int[]{0, 1, 1, 2, 1, 2,2}, tester.countBits(6));
@@ -77,7 +77,7 @@ class LeetCodeProblemsTest {
     }
 
     @Test
-    void checkRecord() throws Exception{
+    void checkRecord() {
         assertTrue(tester.checkRecord("PPALLP"));
         assertFalse(tester.checkRecord("PPALLL"));
         assertFalse(tester.checkRecord("PPAALL"));
