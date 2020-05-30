@@ -115,4 +115,13 @@ class LeetCodeProblemsTest {
         assertArrayEquals(new int[]{1,23,33,5,88,0,0,0}, tester.moveZeroes(new int[]{0,1,23,33,0,5,88,0}));
 
     }
+
+    @Test
+    void maxProfit() {
+        assertEquals(7, tester.maxProfit(new int[]{7,1,5,3,6,4}));
+        assertEquals(4, tester.maxProfit(new int[]{1,2,3,4,5}));
+        assertEquals(0, tester.maxProfit(new int[]{7,6,4,3,1}));
+        assertEquals(1, tester.maxProfit(new int[]{6,7}));
+        assertEquals(14, tester.maxProfit(new int[]{2,6,8,4,1,3,9}));
+    }
 }

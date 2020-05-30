@@ -211,7 +211,7 @@ public class LeetCodeProblems {
      * Part of the isHappy problem.
      */
     public int singleNumberSplit(int number){
-        int num = 0;
+        int num;
         int value = 0;
         while(number >= 10){
             num = number%10;
@@ -398,5 +398,17 @@ public class LeetCodeProblems {
         }
         return nums;
     }
+
+    public int maxProfit(int[] prices) {
+        int profit = 0;
+
+        for(int i = 0; i < prices.length-1; i++){
+            if(prices[i+1] > prices[i]){
+                profit += (prices[i+1] - prices[i]);
+            }
+        }
+        return profit;
+    }
+
 
 }
