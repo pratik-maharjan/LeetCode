@@ -124,4 +124,13 @@ class LeetCodeProblemsTest {
         assertEquals(1, tester.maxProfit(new int[]{6,7}));
         assertEquals(14, tester.maxProfit(new int[]{2,6,8,4,1,3,9}));
     }
+
+    @Test
+    void groupAnagrams() {
+        List<List<String>> test1 = new ArrayList<>(List.of(List.of("tan","nat"),List.of("bat"),List.of("eat","tea","ate")));
+        assertEquals(test1, tester.groupAnagrams(new String[]{"eat", "tea", "tan", "ate", "nat", "bat"}));
+
+        List<List<String>> test2 = new ArrayList<>(List.of(List.of("ccac"),List.of("aacc"),List.of("pratik","kiartp")));
+        assertEquals(test2, tester.groupAnagrams(new String[]{"pratik", "aacc", "kiartp", "ccac"}));
+    }
 }

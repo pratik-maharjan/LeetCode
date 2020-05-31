@@ -13,7 +13,6 @@ public class LeetCodeProblems {
      * @param t the second string
      * @return returns true of the strings are anagrams, else returns false. eg: pratik -> kraipt
      */
-    // takes in two strings and returns true if they are anagrams, else returns false.
     public boolean isAnagram(String s, String t) {
         char[] str = s.toCharArray();
         char[] tr = t.toCharArray();
@@ -30,7 +29,6 @@ public class LeetCodeProblems {
                 return false;
             }
         }
-
         return true;
     }
 
@@ -399,6 +397,20 @@ public class LeetCodeProblems {
         return nums;
     }
 
+    /**
+     * @param prices takes in an int array of prices
+     * @return returns the max profit that can be made
+     *
+     * Say you have an array prices for which the ith element is the price of a given stock on day i.
+     * Design an algorithm to find the maximum profit. You may complete as many transactions as you like
+     * (i.e., buy one and sell one share of the stock multiple times).
+     *
+     * Example:
+     *  Input: [7,1,5,3,6,4]
+     *  Output: 7
+     *  Explanation: Buy on day 2 (price = 1) and sell on day 3 (price = 5), profit = 5-1 = 4.
+     *              Then buy on day 4 (price = 3) and sell on day 5 (price = 6), profit = 6-3 = 3.
+     */
     public int maxProfit(int[] prices) {
         int profit = 0;
 
@@ -410,5 +422,35 @@ public class LeetCodeProblems {
         return profit;
     }
 
+    /**
+     * @param strs takes in a String array containing a number of words
+     * @return returns a list of list of strings that have been grouped if they are anagrams.
+     *
+     * Example:
+     *  Input: ["eat", "tea", "tan", "ate", "nat", "bat"],
+     *  Output: [["ate","eat","tea"],["nat","tan"],["bat"]]
+     */
+    public List<List<String>> groupAnagrams(String[] strs) {
+        Map<String, List<String>> map = new HashMap<>();
+        for(int i = 0; i < strs.length; i++){
+            char[] strArray = strs[i].toCharArray();
+            Arrays.sort(strArray);
+            if(map.containsKey(Arrays.toString(strArray))){
+                map.get(Arrays.toString(strArray)).add(strs[i]);
+            }
+            else{
+                List<String> list = new ArrayList<>();
+                list.add(strs[i]);
+                map.put(Arrays.toString(strArray),list);
+            }
+        }
+
+        List<List<String>> res = new ArrayList<>();
+        for(String s: map.keySet()){
+            List<String> newList = map.get(s);
+            res.add(newList);
+        }
+        return res;
+    }
 
 }
