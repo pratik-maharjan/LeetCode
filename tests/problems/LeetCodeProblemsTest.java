@@ -133,4 +133,15 @@ class LeetCodeProblemsTest {
         List<List<String>> test2 = new ArrayList<>(List.of(List.of("ccac"),List.of("aacc"),List.of("pratik","kiartp")));
         assertEquals(test2, tester.groupAnagrams(new String[]{"pratik", "aacc", "kiartp", "ccac"}));
     }
+
+    @Test
+    void twoCitySchedCost() {
+        assertEquals(110, tester.twoCitySchedCost(new int[][]{{10,20},{30,200},{400,50},{30,20}}));
+        assertEquals(1859, tester.twoCitySchedCost(new int[][]{{259,770},{448,54},{926,667},{184,139},{840,118},{577,469}}));
+    }
+
+    @Test
+    void reverseString() {
+        assertArrayEquals(new char[]{'o', 'l', 'l', 'e', 'h'}, tester.reverseString(new char[]{'h','e','l','l','o'}));
+    }
 }

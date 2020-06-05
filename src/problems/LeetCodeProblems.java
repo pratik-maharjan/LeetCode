@@ -453,4 +453,44 @@ public class LeetCodeProblems {
         return res;
     }
 
+    /**
+     * @param costs
+     * @return
+     */
+    public int twoCitySchedCost(int[][] costs) {
+        int length = costs.length;
+        int mini = 0;
+        int[] tempcost = new int[length];
+        int diff;
+
+        for(int i = 0; i < length; i++){
+            diff = (costs[i][0] - costs[i][1]);
+            tempcost[i] = diff;
+            mini += costs[i][1];
+        }
+        Arrays.sort(tempcost);
+//        // SOP only for understanding
+//        for(int i = 0; i < length; i++){
+//            System.out.println(tempcost[i]);
+//        }
+        for(int i=0; i < length/2; i++){
+            mini += tempcost[i];
+        }
+        return mini;
+    }
+
+    /**
+     * @param s
+     */
+    public char[] reverseString(char[] s) {
+        int left;
+        int right = s.length-1;
+
+        for(left = 0; left < right; left++, right--){
+            char temp = s[left];
+            s[left]= s[right];
+            s[right] = temp;
+        }
+        return s;
+    }
 }
