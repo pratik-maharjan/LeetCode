@@ -1,6 +1,12 @@
-// Pratik Maharjan
-// LeetCode Problems
-
+/*
+Author: Pratik Maharjan
+For: Personal
+Date: 06/05/2020
+Version: 0.0.1
+Purpose: To practice LeetCode problems and run personal test to understand the problems better
+Action: The methods hold each problem for methods that are called in the problems.
+        Each problems has a corresponding test.
+*/
 
 package problems;
 
@@ -454,8 +460,22 @@ public class LeetCodeProblems {
     }
 
     /**
-     * @param costs
-     * @return
+     * @param costs takes in 2D int array that contains costs for person i to go to city A and city B
+     * @return return the minimum cost to fly every person to a city such that exactly N people arrive in each city.
+     *
+     * There are 2N people a company is planning to interview.
+     * The cost of flying the i-th person to city A is costs[i][0],
+     * and the cost of flying the i-th person to city B is costs[i][1].
+     *
+     * Example:
+     *  Input: [[10,20],[30,200],[400,50],[30,20]]
+     *  Output: 110
+     *  Explanation:
+     *      The first person goes to city A for a cost of 10.
+     *      The second person goes to city A for a cost of 30.
+     *      The third person goes to city B for a cost of 50.
+     *      The fourth person goes to city B for a cost of 20.
+     *      The total minimum cost is 10 + 30 + 50 + 20 = 110 to have half the people interviewing in each city.
      */
     public int twoCitySchedCost(int[][] costs) {
         int length = costs.length;
@@ -480,7 +500,8 @@ public class LeetCodeProblems {
     }
 
     /**
-     * @param s
+     * @param s takes in a char array
+     * @return returns the same char array but reversed
      */
     public char[] reverseString(char[] s) {
         int left;
@@ -492,5 +513,33 @@ public class LeetCodeProblems {
             s[right] = temp;
         }
         return s;
+    }
+
+    /**
+     * @param nums takes in an integer array
+     * @return returns an int value
+     *
+     * Given the array of integers nums, you will choose two different indices i and j of that array.
+     * Return the maximum value of (nums[i]-1)*(nums[j]-1).
+     * Example:
+     *  Input: nums = [3,4,5,2]
+     *  Output: 12
+     *  Explanation: If you choose the indices i=1 and j=2 (indexed from 0), you will get the maximum value,
+     *  that is, (nums[1]-1)*(nums[2]-1) = (4-1)*(5-1) = 3*4 = 12.
+     */
+    public int maxProduct(int[] nums) {
+        int max = 0;
+
+        for(int i = 0; i < nums.length; i++){
+            for(int j = 0; j < nums.length; j++){
+                if(i != j){
+                    int temp = ((nums[i]-1)*(nums[j]-1));
+                    if(temp > max){
+                        max = temp;
+                    }
+                }
+            }
+        }
+        return max;
     }
 }

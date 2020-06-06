@@ -143,5 +143,14 @@ class LeetCodeProblemsTest {
     @Test
     void reverseString() {
         assertArrayEquals(new char[]{'o', 'l', 'l', 'e', 'h'}, tester.reverseString(new char[]{'h','e','l','l','o'}));
+        assertArrayEquals(new char[]{'k', 'i', 't', 'a', 'r', 'p'}, tester.reverseString(new char[]{'p','r','a','t','i', 'k'}));
+
+    }
+
+    @Test
+    void maxProduct() {
+        assertEquals(12, tester.maxProduct(new int[]{3,4,5,2}));
+        assertEquals(16, tester.maxProduct(new int[]{1,5,4,5}));
+        assertEquals(12, tester.maxProduct(new int[]{3,7}));
     }
 }
